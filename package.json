@@ -6,5 +6,9 @@
     "license": "MIT",
     "workspaces": [
       "packages/*"
-    ]
+    ],
+    "scripts": {
+      "start": "yarn workspace @ausuliv/patternfly-extension-seed docs:develop",
+      "build": "yarn workspace @ausuliv/patternfly-extension-seed docs:build"
+    }
 }
