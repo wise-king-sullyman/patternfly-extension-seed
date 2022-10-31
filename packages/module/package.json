@@ -1,0 +1,16 @@
+{
+  "name": "@ausuliv/patternfly-extension-seed",
+  "version": "1.0.0",
+  "description": "A utility for scaffolding patternfly library extensions and their documentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": "git+https://github.com/wise-king-sullyman/patternfly-extension-seed.git",
+  "author": "Red Hat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wise-king-sullyman/patternfly-extension-seed/issues"
+  },
+  "homepage": "https://github.com/wise-king-sullyman/patternfly-extension-seed#readme"
+}

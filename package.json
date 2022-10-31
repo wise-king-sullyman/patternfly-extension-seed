@@ -1,0 +1,10 @@
+{
+    "name": "@ausuliv/patternfly-extension-seed-root",
+    "private": true,
+    "version": "0.0.0",
+    "description": "This library provides patternfly extensions",
+    "license": "MIT",
+    "workspaces": [
+      "packages/*"
+    ]
+}
