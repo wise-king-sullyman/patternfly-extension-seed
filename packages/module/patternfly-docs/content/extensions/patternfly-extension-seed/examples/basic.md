@@ -8,18 +8,18 @@ id: Patternfly extension seed
 # Tab (react | react-demos | html | html-demos | design-guidelines | accessibility)
 source: react
 # If you use typescript, the name of the interface to display props for
-# These are found through the sourceProps function provdided in patternfly-docs.source.js
-propComponents: ['Button']
+# These are found through the sourceProps function provided in patternfly-docs.source.js
+propComponents: ['ExtendedButton']
 ---
 
-import { Button } from "@patternfly/react-core";
+import { ExtendedButton } from "@ausuliv/patternfly-extension-seed";
 
 ## Basic usage
 
 ### Example
-```js file="./Basic.jsx"
+```js file="./Basic.tsx"
 ```
 
 ### Fullscreen example
-```js file="./Basic.jsx" isFullscreen
+```js file="./Basic.tsx" isFullscreen
 ```

@@ -1,14 +1,19 @@
 {
-    "name": "@ausuliv/patternfly-extension-seed-root",
-    "private": true,
-    "version": "0.0.0",
-    "description": "This library provides patternfly extensions",
-    "license": "MIT",
-    "workspaces": [
-      "packages/*"
-    ],
-    "scripts": {
-      "start": "yarn workspace @ausuliv/patternfly-extension-seed docs:develop",
-      "build": "yarn workspace @ausuliv/patternfly-extension-seed docs:build"
-    }
+  "name": "@ausuliv/patternfly-extension-seed-root",
+  "private": true,
+  "version": "0.0.0",
+  "description": "This library provides patternfly extensions",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "yarn workspace @ausuliv/patternfly-extension-seed build",
+    "start": "yarn build && concurrently --kill-others \"yarn workspace @ausuliv/patternfly-extension-seed docs:develop\"",
+    "build:docs": "yarn workspace @ausuliv/patternfly-extension-seed docs:build",
+    "clean": "yarn workspace @ausuliv/patternfly-extension-seed clean"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
 }
