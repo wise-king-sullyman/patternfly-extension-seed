@@ -5,7 +5,6 @@
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
   "scripts": {
-    "test": "test",
     "build": "tsc --build --verbose ./tsconfig.json",
     "clean": "rimraf dist",
     "docs:develop": "pf-docs-framework start",
@@ -24,8 +23,8 @@
     "@patternfly/react-core": "^4.250.1"
   },
   "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0"
+    "react": "^16.8 || ^17 || ^18",
+    "react-dom": "^16.8 || ^17 || ^18"
   },
   "devDependencies": {
     "@patternfly/documentation-framework": "^1.2.55",

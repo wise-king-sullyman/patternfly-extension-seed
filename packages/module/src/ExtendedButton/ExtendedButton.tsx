@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, ButtonProps } from '@patternfly/react-core';
 
-export interface ExtendedButtonProps {
+export interface ExtendedButtonProps extends ButtonProps {
   /** Content to render inside the extended button component */
   children?: React.ReactNode;
 }
@@ -15,12 +15,7 @@ export const ExtendedButton: React.FunctionComponent<ExtendedButtonProps> = ({
   const buttonVariants: ButtonProps['variant'][] = [
     'primary',
     'secondary',
-    'tertiary',
-    'danger',
-    'warning',
-    'link',
-    'plain',
-    'control'
+    'tertiary'
   ];
 
   const handleClick = () => {
