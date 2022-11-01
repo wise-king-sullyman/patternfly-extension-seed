@@ -13,10 +13,8 @@
   ],
   "overrides": [
     {
-      "files": ["**/patternfly-docs/generated/**/**/*", "**/patternfly-docs/pages/*"],
+      "files": ["**/patternfly-docs/pages/*"],
       "rules": {
-        "@typescript-eslint/no-unused-vars": "off",
-        "dot-notation": "off",
         "arrow-body-style": "off"
       }
     }
