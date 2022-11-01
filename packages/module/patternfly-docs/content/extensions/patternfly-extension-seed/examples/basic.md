@@ -17,9 +17,13 @@ import { ExtendedButton } from "@ausuliv/patternfly-extension-seed";
 ## Basic usage
 
 ### Example
+
 ```js file="./Basic.tsx"
+
 ```
 
 ### Fullscreen example
+
 ```js file="./Basic.tsx" isFullscreen
+
 ```
