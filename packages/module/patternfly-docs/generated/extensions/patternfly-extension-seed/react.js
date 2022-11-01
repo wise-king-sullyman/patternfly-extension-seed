@@ -35,11 +35,11 @@ pageData.relativeImports = {
 };
 pageData.examples = {
   'Example': props => 
-    <Example {...pageData} {...props} {...{"code":"import React from \"react\";\nimport { ExtendedButton } from '@ausuliv/patternfly-extension-seed'\n\nconst BasicExample: React.FunctionComponent = () => (\n  <ExtendedButton>My custom extension button</ExtendedButton>\n);\n","title":"Example","lang":"js"}}>
+    <Example {...pageData} {...props} {...{"code":"import React from \"react\";\nimport { ExtendedButton } from '@ausuliv/patternfly-extension-seed'\n\nexport const BasicExample: React.FunctionComponent = () => (\n  <ExtendedButton>My custom extension button</ExtendedButton>\n);\n","title":"Example","lang":"js"}}>
       
     </Example>,
   'Fullscreen example': props => 
-    <Example {...pageData} {...props} {...{"code":"import React from \"react\";\nimport { ExtendedButton } from '@ausuliv/patternfly-extension-seed'\n\nconst BasicExample: React.FunctionComponent = () => (\n  <ExtendedButton>My custom extension button</ExtendedButton>\n);\n","title":"Fullscreen example","lang":"js","isFullscreen":true}}>
+    <Example {...pageData} {...props} {...{"code":"import React from \"react\";\nimport { ExtendedButton } from '@ausuliv/patternfly-extension-seed'\n\nexport const BasicExample: React.FunctionComponent = () => (\n  <ExtendedButton>My custom extension button</ExtendedButton>\n);\n","title":"Fullscreen example","lang":"js","isFullscreen":true}}>
       
     </Example>
 };
