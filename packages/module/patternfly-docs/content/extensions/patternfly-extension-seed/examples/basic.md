@@ -12,7 +12,7 @@ source: react
 propComponents: ['ExtendedButton']
 ---
 
-import { ExtendedButton } from "@ausuliv/patternfly-extension-seed";
+import { ExtendedButton } from "@patternfly/patternfly-extension-seed";
 
 ## Basic usage
 
