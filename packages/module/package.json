@@ -12,13 +12,13 @@
     "docs:serve": "pf-docs-framework serve public --port 5000",
     "docs:screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5000"
   },
-  "repository": "git+https://github.com/wise-king-sullyman/patternfly-extension-seed.git",
+  "repository": "git+https://github.com/patternfly/patternfly-extension-seed.git",
   "author": "Red Hat",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wise-king-sullyman/patternfly-extension-seed/issues"
+    "url": "https://github.com/patternfly/patternfly-extension-seed/issues"
   },
-  "homepage": "https://github.com/wise-king-sullyman/patternfly-extension-seed#readme",
+  "homepage": "https://github.com/patternfly/patternfly-extension-seed#readme",
   "release": {
     "branches": "main"
   },
