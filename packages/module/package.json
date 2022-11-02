@@ -19,6 +19,12 @@
     "url": "https://github.com/wise-king-sullyman/patternfly-extension-seed/issues"
   },
   "homepage": "https://github.com/wise-king-sullyman/patternfly-extension-seed#readme",
+  "release": {
+    "branches": "main"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@patternfly/react-core": "^4.250.1"
   },
