@@ -1,5 +1,5 @@
 {
-  "name": "@ausuliv/patternfly-extension-seed-root",
+  "name": "@patternfly/patternfly-extension-seed-root",
   "private": true,
   "version": "0.0.0",
   "description": "This library provides patternfly extensions",
@@ -8,10 +8,10 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn workspace @ausuliv/patternfly-extension-seed build",
-    "start": "yarn build && concurrently --kill-others \"yarn workspace @ausuliv/patternfly-extension-seed docs:develop\"",
-    "build:docs": "yarn workspace @ausuliv/patternfly-extension-seed docs:build",
-    "clean": "yarn workspace @ausuliv/patternfly-extension-seed clean",
+    "build": "yarn workspace @patternfly/patternfly-extension-seed build",
+    "start": "yarn build && concurrently --kill-others \"yarn workspace @patternfly/patternfly-extension-seed docs:develop\"",
+    "build:docs": "yarn workspace @patternfly/patternfly-extension-seed docs:build",
+    "clean": "yarn workspace @patternfly/patternfly-extension-seed clean",
     "lint:js": "node --max-old-space-size=4096 node_modules/.bin/eslint packages --ext js,jsx,ts,tsx --cache",
     "lint:md": "yarn eslint packages --ext md --no-eslintrc --config .eslintrc-md.json --cache",
     "lint": "yarn lint:js && yarn lint:md",
