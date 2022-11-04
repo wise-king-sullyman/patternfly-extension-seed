@@ -1,1 +1,1 @@
-# patternfly-extension-seed
+# {{ tmplr.extension_name }}

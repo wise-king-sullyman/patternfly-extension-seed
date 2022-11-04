@@ -1,0 +1,16 @@
+steps:
+  - read: extension_name
+    prompt: What is the name of your extension?
+
+  - read: repo_url
+    prompt: What is the URL of your repo remote?
+
+  - update: README.md
+  - update: package.json
+  - update: packages/module/package.json
+
+  - copy: packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/examples/basic.md
+    to: 'packages/module/patternfly-docs/content/extensions/{{ extension_name }}/examples/basic.md'
+
+  - copy: packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/examples/Basic.tsx
+    to: 'packages/module/patternfly-docs/content/extensions/{{ extension_name }}/examples/Basic.tsx'
