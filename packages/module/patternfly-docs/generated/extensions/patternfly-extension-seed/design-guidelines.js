@@ -2,7 +2,7 @@ import React from 'react';
 import { AutoLinkHeader, Example, Link as PatternflyThemeLink } from '@patternfly/documentation-framework/components';
 import srcImport0 from '../../../content/extensions/{{ tmplr.extension_name }}/design-guidelines/./img/card-elements.png';
 const pageData = {
-  "id": "Patternfly extension seed",
+  "id": "{{ tmplr.extension_title }}",
   "section": "extensions",
   "source": "design-guidelines",
   "slug": "/extensions/{{ tmplr.extension_name }}/design-guidelines",

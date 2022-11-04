@@ -2,7 +2,7 @@ import React from 'react';
 import { AutoLinkHeader, Example, Link as PatternflyThemeLink } from '@patternfly/documentation-framework/components';
 import { ExtendedButton } from "@patternfly/{{ tmplr.extension_name }}";
 const pageData = {
-  "id": "Patternfly extension seed",
+  "id": "{{ tmplr.extension_title }}",
   "section": "extensions",
   "source": "react",
   "slug": "/extensions/{{ tmplr.extension_name }}/react",
