@@ -32,3 +32,5 @@ steps:
     to: 'packages/module/patternfly-docs/generated/extensions/{{ extension_name }}/react.js'
 
   - remove: packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed
+
+  - remove: .tmplr.yml 
