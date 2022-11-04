@@ -1,12 +1,12 @@
 import React from 'react';
 import { AutoLinkHeader, Example, Link as PatternflyThemeLink } from '@patternfly/documentation-framework/components';
-import srcImport0 from '../../../content/extensions/patternfly-extension-seed/design-guidelines/./img/card-elements.png';
+import srcImport0 from '../../../content/extensions/{{ tmplr.extension_name }}/design-guidelines/./img/card-elements.png';
 const pageData = {
   "id": "Patternfly extension seed",
   "section": "extensions",
   "source": "design-guidelines",
-  "slug": "/extensions/patternfly-extension-seed/design-guidelines",
-  "sourceLink": "https://github.com/patternfly/patternfly-org/blob/main/packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/design-guidelines/design-guidelines.md"
+  "slug": "/extensions/{{ tmplr.extension_name }}/design-guidelines",
+  "sourceLink": "https://github.com/patternfly/patternfly-org/blob/main/packages/module/patternfly-docs/content/extensions/{{ tmplr.extension_name }}/design-guidelines/design-guidelines.md"
 };
 pageData.relativeImports = {
   
