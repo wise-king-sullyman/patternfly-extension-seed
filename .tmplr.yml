@@ -5,6 +5,9 @@ steps:
   - read: extension_name
     prompt: What is the name of your extension?
 
+  - read: extension_description
+    prompt: What will your extension do?
+
   - read: repo_url
     prompt: What is the URL of your repo remote?
 
