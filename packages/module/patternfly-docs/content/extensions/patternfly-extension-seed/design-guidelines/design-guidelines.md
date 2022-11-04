@@ -15,9 +15,7 @@ Design guidelines intro
 
 ### Sub-header
 
-Referencing an image:
-
-<img src="./img/card-elements.png" alt="Elements of a card" width="370"/>
+Guidelines:
 
 1. A
 1. list
