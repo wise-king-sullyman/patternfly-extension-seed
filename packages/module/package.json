@@ -1,5 +1,5 @@
 {
-  "name": "{{ tmplr.npm_scope }}/{{ tmplr.extension_name }}",
+  "name": "{{ tmplr.npm_scope }}/{{ tmplr.extension_name | kebab-case }}",
   "version": "1.0.0",
   "description": "A utility for scaffolding patternfly library extensions and their documentation",
   "main": "dist/esm/index.js",

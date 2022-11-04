@@ -5,9 +5,6 @@ steps:
   - read: extension_name
     prompt: What is the name of your extension?
 
-  - read: extension_title
-    prompt: What is the title of your extension? (should probably be the name but sentence case)
-
   - read: repo_url
     prompt: What is the URL of your repo remote?
 
@@ -16,20 +13,20 @@ steps:
   - update: packages/module/package.json
 
   - copy: packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/examples/basic.md
-    to: 'packages/module/patternfly-docs/content/extensions/{{ extension_name }}/examples/basic.md'
+    to: 'packages/module/patternfly-docs/content/extensions/{{ extension_name | kebab-case }}/examples/basic.md'
 
   - copy: packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/examples/Basic.tsx
-    to: 'packages/module/patternfly-docs/content/extensions/{{ extension_name }}/examples/Basic.tsx'
+    to: 'packages/module/patternfly-docs/content/extensions/{{ extension_name | kebab-case }}/examples/Basic.tsx'
 
   - remove: packages/module/patternfly-docs/content/extensions/patternfly-extension-seed
 
   - update: packages/module/patternfly-docs/generated/index.js
 
   - copy: packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed/design-guidelines.js
-    to: 'packages/module/patternfly-docs/generated/extensions/{{ extension_name }}/design-guidelines.js'
+    to: 'packages/module/patternfly-docs/generated/extensions/{{ extension_name | kebab-case }}/design-guidelines.js'
 
   - copy: packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed/react.js
-    to: 'packages/module/patternfly-docs/generated/extensions/{{ extension_name }}/react.js'
+    to: 'packages/module/patternfly-docs/generated/extensions/{{ extension_name | kebab-case }}/react.js'
 
   - remove: packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed
 
