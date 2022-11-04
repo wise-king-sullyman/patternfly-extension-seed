@@ -22,10 +22,10 @@ steps:
 
   - update: packages/module/patternfly-docs/generated/index.js
 
-  - copy: packages/module/patternfly-docs/generated/extensions/patternfly-extensions-seed/design-guidelines.js
+  - copy: packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed/design-guidelines.js
     to: 'packages/module/patternfly-docs/generated/extensions/{{ extension_name }}/design-guidelines.js'
 
-  - copy: packages/module/patternfly-docs/generated/extensions/patternfly-extensions-seed/react.js
+  - copy: packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed/react.js
     to: 'packages/module/patternfly-docs/generated/extensions/{{ extension_name }}/react.js'
 
-  - remove: packages/module/patternfly-docs/generated/extensions/patternfly-extensions-seed
+  - remove: packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed
