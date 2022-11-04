@@ -1,4 +1,7 @@
 steps:
+  - read: npm_scope
+    prompt: What scope should this extension be listed under on NPM?
+
   - read: extension_name
     prompt: What is the name of your extension?
 
@@ -10,7 +13,9 @@ steps:
   - update: packages/module/package.json
 
   - copy: packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/examples/basic.md
-    to: 'packages/module/patternfly-docs/content/extensions/{{ extension_name }}/examples/basic.md'
+    to: 'packages/module/patternfly-docs/content/extensions/{{ npm_scope }}/{{ extension_name }}/examples/basic.md'
 
   - copy: packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/examples/Basic.tsx
-    to: 'packages/module/patternfly-docs/content/extensions/{{ extension_name }}/examples/Basic.tsx'
+    to: 'packages/module/patternfly-docs/content/extensions/{{ npm_scope }}/{{ extension_name }}/examples/Basic.tsx'
+
+  - remove: packages/module/patternfly-docs/content/extensions/patternfly-extension-seed

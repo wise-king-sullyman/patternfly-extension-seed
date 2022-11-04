@@ -12,7 +12,7 @@ source: react
 propComponents: ['ExtendedButton']
 ---
 
-import { ExtendedButton } from "{{ tmplr.extension_name }}";
+import { ExtendedButton } from "{{ tmplr.npm_scope }}/{{ tmplr.extension_name }}";
 
 ## Basic usage
 
