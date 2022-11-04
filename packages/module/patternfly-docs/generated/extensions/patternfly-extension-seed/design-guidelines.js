@@ -1,6 +1,6 @@
 import React from 'react';
 import { AutoLinkHeader, Example, Link as PatternflyThemeLink } from '@patternfly/documentation-framework/components';
-import srcImport0 from '../../../content/extensions/{{ tmplr.extension_name | kebab-case }}/design-guidelines/./img/card-elements.png';
+
 const pageData = {
   "id": "{{ tmplr.extension_name }}",
   "section": "extensions",
@@ -27,10 +27,8 @@ const Component = () => (
       {`Sub-header`}
     </AutoLinkHeader>
     <p {...{"className":"ws-p"}}>
-      {`Referencing an image:`}
+      {`Guidelines:`}
     </p>
-    <img src={srcImport0} height={srcImport0.height * 370 / srcImport0.width} {...{"alt":"Elements of a card","width":"370","className":"ws-img"}}>
-    </img>
     <ol {...{"className":"ws-ol"}}>
       <li {...{"className":"ws-li"}}>
         {`A`}
