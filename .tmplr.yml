@@ -21,9 +21,6 @@ steps:
   - copy: packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/design-guidelines/design-guidelines.md
     to: 'packages/module/patternfly-docs/content/extensions/{{ extension_name | kebab-case }}/design-guidelines/design-guidelines.md'
 
-  - copy: packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/design-guidelines/img/card-elements.png
-    to: 'packages/module/patternfly-docs/content/extensions/{{ extension_name | kebab-case }}/design-guidelines/img/card-elements.png'
-
   - remove: packages/module/patternfly-docs/content/extensions/patternfly-extension-seed
 
   - update: packages/module/patternfly-docs/generated/index.js
