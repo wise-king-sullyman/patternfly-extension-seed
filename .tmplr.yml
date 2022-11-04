@@ -33,4 +33,9 @@ steps:
 
   - remove: packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed
 
-  - remove: .tmplr.yml 
+  - remove: .tmplr.yml
+
+  - copy: README-template.md
+    to: README.md
+  
+  - remove: README-template.md
