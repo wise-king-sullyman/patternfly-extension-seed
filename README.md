@@ -5,7 +5,7 @@ To create an extension:
 1. create an **empty** repo for your new extension
 1. clone that repo to your local machine
 1. `cd` into the directory created by cloning
-1. run `npx tmplr patternfly/patternfly-extension-seed#tmplr_poc`
+1. run `npx tmplr patternfly/patternfly-extension-seed`
 1. enter your information when prompted
     - npm scope should start with an @ symbol, i.e. `@patternfly`
     - extension name should be in sentence case but without any punctuation, i.e. `Patternfly extension seed`

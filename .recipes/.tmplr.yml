@@ -1,6 +1,6 @@
 steps:
   - read: npm_scope
-    prompt: What scope should this extension be listed under on NPM?
+    prompt: What scope should this extension be listed under on NPM (e.g. @patternfly, @yourorg, etc.)?
 
   - read: extension_name
     prompt: What is the name of your extension?
@@ -11,34 +11,35 @@ steps:
   - read: repo_url
     prompt: What is the URL of your repo remote?
 
+  - copy: .recipes/packages/default/README.md
+    to: '.'
   - update: README.md
+  
+  - copy: .recipes/packages/default/package.json
+    to: '.'
   - update: package.json
+
+  - copy: .recipes/packages/default/packages/module/package.json
+    to: 'packages/module/package.json'
   - update: packages/module/package.json
 
-  - copy: packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/examples/basic.md
+  - copy: .recipes/packages/default/packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/examples/basic.md
     to: 'packages/module/patternfly-docs/content/extensions/{{ extension_name | kebab-case }}/examples/basic.md'
 
-  - copy: packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/examples/Basic.tsx
+  - copy: .recipes/packages/default/packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/examples/Basic.tsx
     to: 'packages/module/patternfly-docs/content/extensions/{{ extension_name | kebab-case }}/examples/Basic.tsx'
 
-  - copy: packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/design-guidelines/design-guidelines.md
+  - copy: .recipes/packages/default/packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/design-guidelines/design-guidelines.md
     to: 'packages/module/patternfly-docs/content/extensions/{{ extension_name | kebab-case }}/design-guidelines/design-guidelines.md'
-
-  - remove: packages/module/patternfly-docs/content/extensions/patternfly-extension-seed
 
   - update: packages/module/patternfly-docs/generated/index.js
 
-  - copy: packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed/design-guidelines.js
+  - copy: .recipes/packages/default/packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed/design-guidelines.js
     to: 'packages/module/patternfly-docs/generated/extensions/{{ extension_name | kebab-case }}/design-guidelines.js'
 
-  - copy: packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed/react.js
+  - copy: .recipes/packages/default/packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed/react.js
     to: 'packages/module/patternfly-docs/generated/extensions/{{ extension_name | kebab-case }}/react.js'
-
-  - remove: packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed
 
   - copy: README-template.md
     to: README.md
   
-  - remove: README-template.md
-
-  - remove: .tmplr.yml
