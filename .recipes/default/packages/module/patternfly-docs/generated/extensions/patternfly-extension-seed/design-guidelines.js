@@ -1,12 +1,12 @@
 import React from 'react';
 import { AutoLinkHeader, Example, Link as PatternflyThemeLink } from '@patternfly/documentation-framework/components';
-import srcImport0 from '../../../content/extensions/patternfly-extension-seed/design-guidelines/./img/card-elements.png';
+
 const pageData = {
-  "id": "Patternfly extension seed",
+  "id": "{{ tmplr.extension_name }}",
   "section": "extensions",
   "source": "design-guidelines",
-  "slug": "/extensions/patternfly-extension-seed/design-guidelines",
-  "sourceLink": "https://github.com/patternfly/patternfly-org/blob/main/packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/design-guidelines/design-guidelines.md"
+  "slug": "/extensions/{{ tmplr.extension_name | kebab-case }}/design-guidelines",
+  "sourceLink": "https://github.com/patternfly/patternfly-org/blob/main/packages/module/patternfly-docs/content/extensions/{{ tmplr.extension_name | kebab-case }}/design-guidelines/design-guidelines.md"
 };
 pageData.relativeImports = {
   
@@ -27,10 +27,8 @@ const Component = () => (
       {`Sub-header`}
     </AutoLinkHeader>
     <p {...{"className":"ws-p"}}>
-      {`Referencing an image:`}
+      {`Guidelines:`}
     </p>
-    <img src={srcImport0} height={srcImport0.height * 370 / srcImport0.width} {...{"alt":"Elements of a card","width":"370","className":"ws-img"}}>
-    </img>
     <ol {...{"className":"ws-ol"}}>
       <li {...{"className":"ws-li"}}>
         {`A`}

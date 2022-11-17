@@ -1,7 +1,7 @@
 {
-  "name": "@patternfly/patternfly-extension-seed",
+  "name": "{{ tmplr.npm_scope }}/{{ tmplr.extension_name | kebab-case }}",
   "version": "1.0.0",
-  "description": "A utility for scaffolding patternfly library extensions and their documentation",
+  "description": "{{ tmplr.extension_description }}",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
   "scripts": {
@@ -13,13 +13,13 @@
     "docs:screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5000",
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config"
   },
-  "repository": "git+https://github.com/patternfly/patternfly-extension-seed.git",
+  "repository": "git+{{ tmplr.repo_url }}.git",
   "author": "Red Hat",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/patternfly/patternfly-extension-seed/issues"
+    "url": "{{ tmplr.repo_url }}/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-extension-seed#readme",
+  "homepage": "{{ tmplr.repo_url }}#readme",
   "release": {
     "branches": "main"
   },

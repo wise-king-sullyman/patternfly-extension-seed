@@ -4,7 +4,7 @@
 section: extensions
 # Sidenav secondary level section
 # should be the same for all markdown files for each extension
-id: Patternfly extension seed
+id: {{ tmplr.extension_name }}
 # Tab (react | react-demos | html | html-demos | design-guidelines | accessibility)
 source: design-guidelines
 ---
@@ -15,9 +15,7 @@ Design guidelines intro
 
 ### Sub-header
 
-Referencing an image:
-
-<img src="./img/card-elements.png" alt="Elements of a card" width="370"/>
+Guidelines:
 
 1. A
 1. list
