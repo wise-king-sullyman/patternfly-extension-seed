@@ -42,4 +42,5 @@ steps:
   - copy: .recipes/default/packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed/react.js
     to: 'packages/module/patternfly-docs/generated/extensions/{{ extension_name | kebab-case }}/react.js'
 
+  - remove: .github/workflows/add-to-project.yml
   
