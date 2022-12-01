@@ -24,12 +24,11 @@ jobs:
           path: |
             README.md
             package.json
+            .tmplr.yml
             packages/*/package.json
-            packages/*/patternfly-docs/*/*
-            packages/*/patternfly-docs/*/extensions/*/*
-            packages/*/patternfly-docs/*/extensions/*/*/*
-            packages/*/patternfly-docs/*/extensions/*/*/*/*
-          key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('package.json', 'packages/module/package.json') }}
+            packages/*/patternfly-docs/content/**
+            packages/*/patternfly-docs/generated/**
+          key: ${{ runner.os }}-setup-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('package.json', 'packages/module/package.json') }}
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
