@@ -64,9 +64,18 @@ jobs:
             git fetch origin pull/$GH_PR_NUM/head:tmp
             git checkout tmp
           fi
-      - name: Run build script
-        run: ./devSetup.sh
-        shell: bash
+      - uses: actions/cache@v2
+        id: setup-cache
+        name: Cache setup
+        with:
+          path: |
+            README.md
+            package.json
+            .tmplr.yml
+            packages/*/package.json
+            packages/*/patternfly-docs/content/**
+            packages/*/patternfly-docs/generated/**
+          key: ${{ runner.os }}-setup-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('package.json', 'packages/module/package.json') }}
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
@@ -108,9 +117,18 @@ jobs:
             git fetch origin pull/$GH_PR_NUM/head:tmp
             git checkout tmp
           fi
-      - name: Run build script
-        run: ./devSetup.sh
-        shell: bash
+      - uses: actions/cache@v2
+        id: setup-cache
+        name: Cache setup
+        with:
+          path: |
+            README.md
+            package.json
+            .tmplr.yml
+            packages/*/package.json
+            packages/*/patternfly-docs/content/**
+            packages/*/patternfly-docs/generated/**
+          key: ${{ runner.os }}-setup-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('package.json', 'packages/module/package.json') }}
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
