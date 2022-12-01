@@ -17,9 +17,19 @@ jobs:
             git fetch origin pull/$GH_PR_NUM/head:tmp
             git checkout tmp
           fi
-      - name: Run build script
-        run: ./devSetup.sh
-        shell: bash
+      - uses: actions/cache@v2
+        id: setup-cache
+        name: Cache setup
+        with:
+          path: |
+            README.md
+            package.json
+            packages/*/package.json
+            packages/*/patternfly-docs/*/*
+            packages/*/patternfly-docs/*/extensions/*/*
+            packages/*/patternfly-docs/*/extensions/*/*/*
+            packages/*/patternfly-docs/*/extensions/*/*/*/*
+          key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('package.json', 'packages/module/package.json') }}
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
@@ -31,8 +41,6 @@ jobs:
            node_modules
            **/node_modules
           key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
-      - run: yarn install --frozen-lockfile
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
         id: lint-cache
         name: Load lint cache
