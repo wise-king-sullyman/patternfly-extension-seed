@@ -17,7 +17,7 @@ From there you can:
 - run `yarn start` to build and start the development server
 - run `yarn test` to run the tests for the demo component
 - run `yarn lint` to run the linter
-- run `yarn build:docs` followed by `yarn serve:docs`, then run `yarn test:a11y` in a new terminal window to run our accessibility tests for the demo component
+- run `yarn build:docs` followed by `yarn serve:docs`, then run `yarn test:a11y` in a new terminal window to run our accessibility tests for the demo component. Once the accessibility tests have finished running you can run `yarn serve:a11y` to locally view the generated report.
 
 Upon pushing to your remote repo GitHub Actions should run which ensure that the extension can properly build, pass all tests, pass the linter check, and pass all accessibility tests. 
 
