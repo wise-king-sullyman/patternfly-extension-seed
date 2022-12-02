@@ -42,5 +42,14 @@ steps:
   - copy: .recipes/default/packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed/react.js
     to: 'packages/module/patternfly-docs/generated/extensions/{{ extension_name | kebab-case }}/react.js'
 
+  - copy: .recipes/default/workflows/build-lint-test.yml
+    to: .github/workflows/build-lint-test.yml
+
+  - copy: .recipes/default/workflows/release.yml
+    to: .github/workflows/release.yml
+
   - remove: .github/workflows/add-to-project.yml
+  - remove: .recipes
+  - remove: devSetup.sh
+  - remove: .tmplr.yml
   
