@@ -29,7 +29,7 @@ async function createPackage(file) {
     return;
   }
 
-  const destFile = `${path.resolve(root, file.split('packages/module/src/').pop())}/package.json`;
+  const destFile = `${path.resolve(`${root}/packages/module/dist/esm`, fileName)}/package.json`;
 
   const esmRelative = path.relative(file.replace('packages/module/src', ''), esmSource);
   const content = {
@@ -39,7 +39,7 @@ async function createPackage(file) {
   const typings = glob.sync(`${root}/packages/module/src/${fileName}/*.d.ts`);
   let cmds = [];
   content.typings = 'index.d.ts';
-  cmds.push(copyTypings(typings, `${root}/${fileName}`));
+  cmds.push(copyTypings(typings, `${root}/packages/module/dist/${fileName}`));
   cmds.push(fse.writeJSON(destFile, content));
   return Promise.all(cmds);
 }
