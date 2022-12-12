@@ -1,15 +1,16 @@
 steps:
-  - read: npm_scope
-    prompt: What scope should this extension be listed under on NPM (e.g. @patternfly, @yourorg, etc.)?
+  - read: npm_scope 
+    from: env.SCOPE
 
   - read: extension_name
-    prompt: What is the name of your extension?
+    from: git.remote_name
 
   - read: extension_description
-    prompt: What will your extension do?
+    from: env.DESCRIPTION
 
   - read: repo_url
-    prompt: What is the URL of your repo remote?
+    from: git.remote_url
+
 
   - copy: .recipes/default/README.md
     to: 'README.md'
@@ -42,14 +43,4 @@ steps:
   - copy: .recipes/default/packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed/react.js
     to: 'packages/module/patternfly-docs/generated/extensions/{{ extension_name | kebab-case }}/react.js'
 
-  - copy: .recipes/default/workflows/build-lint-test.yml
-    to: .github/workflows/build-lint-test.yml
-
-  - copy: .recipes/default/workflows/release.yml
-    to: .github/workflows/release.yml
-
-  - remove: .github/workflows/add-to-project.yml
-  - remove: .recipes
-  - remove: devSetup.sh
-  - remove: .tmplr.yml
   
