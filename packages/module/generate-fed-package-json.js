@@ -31,7 +31,7 @@ async function createPackage(file) {
 
   const destFile = `${path.resolve(`${root}/dist/esm`, fileName)}/package.json`;
 
-  const esmRelative = path.relative(file.replace('/src', ''), esmSource);
+  const esmRelative = path.relative(file.replace('/dist/esm', ''), esmSource);
   const content = {
     main: 'index.js',
     module: esmRelative,
