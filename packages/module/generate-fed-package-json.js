@@ -5,10 +5,10 @@ const path = require('path');
 const root = process.cwd();
 
 const sourceFiles = glob
-  .sync(`${root}/packages/module/src/*/`)
+  .sync(`${root}/src/*/`)
   .map((name) => name.replace(/\/$/, ''));
   
-const indexTypings = glob.sync(`${root}/packages/module/src/index.d.ts`);
+const indexTypings = glob.sync(`${root}/src/index.d.ts`);
 
 async function copyTypings(files, dest) {
   const cmds = [];
@@ -21,7 +21,7 @@ async function copyTypings(files, dest) {
 
 async function createPackage(file) {
   const fileName = file.split('/').pop();
-  const esmSource = glob.sync(`${root}/packages/module/dist/esm/${fileName}/**/index.js`)[0];
+  const esmSource = glob.sync(`${root}/dist/esm/${fileName}/**/index.js`)[0];
   /**
    * Prevent creating package.json for directories with no JS files (like CSS directories)
    */
@@ -29,17 +29,17 @@ async function createPackage(file) {
     return;
   }
 
-  const destFile = `${path.resolve(`${root}/packages/module/dist/esm`, fileName)}/package.json`;
+  const destFile = `${path.resolve(`${root}/dist/esm`, fileName)}/package.json`;
 
-  const esmRelative = path.relative(file.replace('packages/module/src', ''), esmSource);
+  const esmRelative = path.relative(file.replace('/src', ''), esmSource);
   const content = {
     main: 'index.js',
     module: esmRelative,
   };
-  const typings = glob.sync(`${root}/packages/module/src/${fileName}/*.d.ts`);
+  const typings = glob.sync(`${root}/src/${fileName}/*.d.ts`);
   let cmds = [];
   content.typings = 'index.d.ts';
-  cmds.push(copyTypings(typings, `${root}/packages/module/dist/${fileName}`));
+  cmds.push(copyTypings(typings, `${root}/dist/${fileName}`));
   cmds.push(fse.writeJSON(destFile, content));
   return Promise.all(cmds);
 }
