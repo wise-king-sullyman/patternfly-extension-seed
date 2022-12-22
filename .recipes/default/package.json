@@ -1,29 +1,44 @@
 {
-  "name": "{{ tmplr.npm_scope }}/{{ tmplr.extension_name | kebab-case }}-root",
-  "private": true,
-  "version": "0.0.0",
-  "description": "This library provides patternfly extensions",
-  "license": "MIT",
-  "workspaces": [
-    "packages/*"
-  ],
+  "name": "{{ tmplr.npm_scope }}/{{ tmplr.extension_name | kebab-case }}",
+  "version": "1.0.0",
+  "description": "{{ tmplr.extension_description }}",
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
   "scripts": {
-    "build": "yarn workspace {{ tmplr.npm_scope }}/{{ tmplr.extension_name | kebab-case }} build",
-    "build:docs": "yarn workspace {{ tmplr.npm_scope }}/{{ tmplr.extension_name | kebab-case }} docs:build",
-    "build:fed:packages": "yarn workspace {{ tmplr.npm_scope }}/{{ tmplr.extension_name | kebab-case }} build:fed:packages",
-    "start": "yarn build && concurrently --kill-others \"yarn workspace {{ tmplr.npm_scope }}/{{ tmplr.extension_name | kebab-case }} docs:develop\"",
-    "serve:docs": "yarn workspace {{ tmplr.npm_scope }}/{{ tmplr.extension_name | kebab-case }} docs:serve",
-    "clean": "yarn workspace {{ tmplr.npm_scope }}/{{ tmplr.extension_name | kebab-case }} clean",
-    "lint:js": "node --max-old-space-size=4096 node_modules/.bin/eslint packages --ext js,jsx,ts,tsx --cache",
-    "lint:md": "yarn eslint packages --ext md --no-eslintrc --config .eslintrc-md.json --cache",
+    "start": "yarn build && concurrently --kill-others \"yarn docs:develop\"",
+    "build": "tsc --build --verbose ./tsconfig.json",
+    "build:fed:packages": "node generate-fed-package-json.js",
+    "clean": "rimraf dist",
+    "docs:develop": "pf-docs-framework start",
+    "docs:build": "pf-docs-framework build all --output public",
+    "docs:serve": "pf-docs-framework serve public --port 5000",
+    "docs:screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5000",
+    "test:a11y": "patternfly-a11y --config patternfly-a11y.config",
+    "serve:a11y": "yarn serve coverage",
+    "lint:js": "node --max-old-space-size=4096 node_modules/.bin/eslint ./ --ext js,jsx,ts,tsx --cache",
+    "lint:md": "yarn eslint ./ --ext md --no-eslintrc --config .eslintrc-md.json --cache",
     "lint": "yarn lint:js && yarn lint:md",
-    "test": "TZ=EST jest packages",
-    "test:a11y": "yarn workspace {{ tmplr.npm_scope }}/{{ tmplr.extension_name | kebab-case }} test:a11y",
-    "serve:a11y": "yarn workspace {{ tmplr.npm_scope }}/{{ tmplr.extension_name | kebab-case }} serve:a11y"
+    "test": "TZ=EST jest"
+  },
+  "repository": "git+{{ tmplr.repo_url }}.git",
+  "author": "Red Hat",
+  "license": "MIT",
+  "bugs": {
+    "url": "{{ tmplr.repo_url }}/issues"
+  },
+  "homepage": "{{ tmplr.repo_url }}#readme",
+  "release": {
+    "branches": "main"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@patternfly/react-core": "^4.250.1",
+    "react": "^17",
+    "react-dom": "^17"
   },
   "devDependencies": {
-    "react": "^17",
-    "react-dom": "^17",
     "concurrently": "^5.3.0",
     "eslint": "^8.0.1",
     "eslint-plugin-import": "^2.25.2",
@@ -49,6 +64,15 @@
     "@testing-library/user-event": "13.5.0",
     "@testing-library/jest-dom":"5.16.5",
     "jest-environment-jsdom": "^29.2.2",
-    "serve": "^14.1.2"
+    "serve": "^14.1.2",
+    "@patternfly/documentation-framework": "^1.2.55",
+    "@patternfly/patternfly": "^4.217.1",
+    "@patternfly/react-table": "^4.111.4",
+    "@patternfly/react-code-editor": "^4.82.26",
+    "rimraf": "^2.6.2",
+    "typescript": "^4.7.4",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@patternfly/patternfly-a11y": "4.3.1"
   }
 }

@@ -2,11 +2,12 @@ import React from 'react';
 import { AutoLinkHeader, Example, Link as PatternflyThemeLink } from '@patternfly/documentation-framework/components';
 
 const pageData = {
-  "id": "{{ tmplr.extension_name }}",
+  "id": "patternfly-extension-seed",
   "section": "extensions",
+  "subsection": "",
   "source": "design-guidelines",
-  "slug": "/extensions/{{ tmplr.extension_name | kebab-case }}/design-guidelines",
-  "sourceLink": "https://github.com/patternfly/patternfly-org/blob/main/packages/module/patternfly-docs/content/extensions/{{ tmplr.extension_name | kebab-case }}/design-guidelines/design-guidelines.md"
+  "slug": "/extensions/patternfly-extension-seed/design-guidelines",
+  "sourceLink": "https://github.com/patternfly/patternfly-org/blob/main/repos/patternfly-extension-seed/patternfly-docs/content/extensions/patternfly-extension-seed/design-guidelines/design-guidelines.md"
 };
 pageData.relativeImports = {
   

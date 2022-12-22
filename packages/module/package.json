@@ -1,12 +1,11 @@
 {
-  "name": "{{ tmplr.npm_scope }}/{{ tmplr.extension_name | kebab-case }}",
+  "name": "@patternfly/patternfly-extension-seed",
   "version": "1.0.0",
-  "description": "{{ tmplr.extension_description }}",
+  "description": "This library provides patternfly extensions",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
   "scripts": {
     "build": "tsc --build --verbose ./tsconfig.json",
-    "build:fed:packages": "node generate-fed-package-json.js",
     "clean": "rimraf dist",
     "docs:develop": "pf-docs-framework start",
     "docs:build": "pf-docs-framework build all --output public",
@@ -15,13 +14,13 @@
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config",
     "serve:a11y": "yarn serve coverage"
   },
-  "repository": "git+{{ tmplr.repo_url }}.git",
+  "repository": "git+git@github.com:wise-king-sullyman/patternfly-extension-seed.git.git",
   "author": "Red Hat",
   "license": "MIT",
   "bugs": {
-    "url": "{{ tmplr.repo_url }}/issues"
+    "url": "git@github.com:wise-king-sullyman/patternfly-extension-seed.git/issues"
   },
-  "homepage": "{{ tmplr.repo_url }}#readme",
+  "homepage": "git@github.com:wise-king-sullyman/patternfly-extension-seed.git#readme",
   "release": {
     "branches": "main"
   },

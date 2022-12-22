@@ -19,28 +19,28 @@ steps:
     to: 'package.json'
   - update: package.json
 
-  - copy: .recipes/default/packages/module/package.json
-    to: 'packages/module/package.json'
-  - update: packages/module/package.json
+  - copy: .recipes/default/package.json
+    to: 'package.json'
+  - update: package.json
 
-  - copy: .recipes/default/packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/examples/basic.md
-    to: 'packages/module/patternfly-docs/content/extensions/{{ extension_name | kebab-case }}/examples/basic.md'
+  - copy: .recipes/default/patternfly-docs/content/extensions/patternfly-extension-seed/examples/basic.md
+    to: 'patternfly-docs/content/extensions/{{ extension_name | kebab-case }}/examples/basic.md'
 
-  - copy: .recipes/default/packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/examples/Basic.tsx
-    to: 'packages/module/patternfly-docs/content/extensions/{{ extension_name | kebab-case }}/examples/Basic.tsx'
+  - copy: .recipes/default/patternfly-docs/content/extensions/patternfly-extension-seed/examples/Basic.tsx
+    to: 'patternfly-docs/content/extensions/{{ extension_name | kebab-case }}/examples/Basic.tsx'
 
-  - copy: .recipes/default/packages/module/patternfly-docs/content/extensions/patternfly-extension-seed/design-guidelines/design-guidelines.md
-    to: 'packages/module/patternfly-docs/content/extensions/{{ extension_name | kebab-case }}/design-guidelines/design-guidelines.md'
+  - copy: .recipes/default/patternfly-docs/content/extensions/patternfly-extension-seed/design-guidelines/design-guidelines.md
+    to: 'patternfly-docs/content/extensions/{{ extension_name | kebab-case }}/design-guidelines/design-guidelines.md'
 
-  - copy: .recipes/default/packages/module/patternfly-docs/generated/index.js
-    to: packages/module/patternfly-docs/generated/index.js
-  - update: packages/module/patternfly-docs/generated/index.js
+  - copy: .recipes/default/patternfly-docs/generated/index.js
+    to: patternfly-docs/generated/index.js
+  - update: patternfly-docs/generated/index.js
 
-  - copy: .recipes/default/packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed/design-guidelines.js
-    to: 'packages/module/patternfly-docs/generated/extensions/{{ extension_name | kebab-case }}/design-guidelines.js'
+  - copy: .recipes/default/patternfly-docs/generated/extensions/patternfly-extension-seed/design-guidelines.js
+    to: 'patternfly-docs/generated/extensions/{{ extension_name | kebab-case }}/design-guidelines.js'
 
-  - copy: .recipes/default/packages/module/patternfly-docs/generated/extensions/patternfly-extension-seed/react.js
-    to: 'packages/module/patternfly-docs/generated/extensions/{{ extension_name | kebab-case }}/react.js'
+  - copy: .recipes/default/patternfly-docs/generated/extensions/patternfly-extension-seed/react.js
+    to: 'patternfly-docs/generated/extensions/{{ extension_name | kebab-case }}/react.js'
 
   - copy: .recipes/default/workflows/build-lint-test.yml
     to: .github/workflows/build-lint-test.yml

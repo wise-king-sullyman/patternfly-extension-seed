@@ -2,11 +2,10 @@ module.exports = {
   clearMocks: true,
   testMatch: ['**/__tests__/**/*.{js,ts}?(x)', '**/*.test.{js,ts}?(x)'],
   modulePathIgnorePatterns: [
-    '<rootDir>/packages/*.*/dist/*.*',
-    '<rootDir>/packages/*.*/public/*.*',
-    '<rootDir>/packages/*.*/.cache/*.*'
+    '<rootDir>/dist/*.*',
+    '<rootDir>/public/*.*',
+    '<rootDir>/.cache/*.*'
   ],
-  roots: ['<rootDir>/packages'],
   transform: {
     '^.+\\.[jt]sx?$': 'babel-jest'
   },

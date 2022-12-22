@@ -25,7 +25,7 @@ jobs:
             packages/*/package.json
             packages/*/patternfly-docs/content/**
             packages/*/patternfly-docs/generated/**
-          key: ${{ runner.os }}-setup-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('package.json', 'packages/module/package.json') }}
+          key: ${{ runner.os }}-setup-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('package.json') }}
       - name: Run build script
         run: ./devSetup.sh
         shell: bash
