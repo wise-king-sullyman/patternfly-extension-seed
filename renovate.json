@@ -5,6 +5,7 @@
     ":dependencyDashboardApproval"
   ],
   "enabledManagers": ["npm"],
+  "rangeStrategy": "bump",
   "packageRules": [
     {
       "packagePatterns": ["*"],
