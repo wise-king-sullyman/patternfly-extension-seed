@@ -4,6 +4,8 @@
     "config:base",
     ":dependencyDashboardApproval"
   ],
+  "enabledManagers": ["npm"],
+  "rangeStrategy": "bump",
   "packageRules": [
     {
       "packagePatterns": ["*"],
@@ -13,6 +15,7 @@
       "enabled": false
     },
     {
+      "datasources": ["npm"],
       "packageNames": [
         "@patternfly/documentation-framework"
       ]
