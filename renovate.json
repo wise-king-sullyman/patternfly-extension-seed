@@ -4,6 +4,7 @@
     "config:base",
     ":dependencyDashboardApproval"
   ],
+  "enabledManagers": ["npm"],
   "packageRules": [
     {
       "packagePatterns": ["*"],
@@ -13,6 +14,7 @@
       "enabled": false
     },
     {
+      "datasources": ["npm"],
       "packageNames": [
         "@patternfly/documentation-framework"
       ]
